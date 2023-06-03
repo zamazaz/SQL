@@ -1,0 +1,28 @@
+CREATE TABLE inventory (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, color TEXT);
+INSERT INTO inventory VALUES(1, "shirt", 10, 10.50, "black");
+INSERT INTO inventory VALUES(2, "pants", 12, 15.55, "kahki");
+INSERT INTO inventory VALUES(3, "socks", 20, 8, "white");
+INSERT INTO inventory VALUES(4, "dress", 8, 22, "pink");
+INSERT INTO inventory VALUES(5, "dress", 8, 22, "blue");
+INSERT INTO inventory VALUES(6, "skirt", 6, 15, "black");
+INSERT INTO inventory VALUES(7, "tank_top", 10, 8.50, "gray");
+INSERT INTO inventory VALUES(8, "shorts", 10, 12.5, "blue");
+INSERT INTO inventory VALUES(9, "blouse", 5, 8.99, "yellow");
+INSERT INTO inventory VALUES(10, "capri_pants",5, 15.99, "cream");
+INSERT INTO inventory VALUES(11, "shirt", 8, 10.50, "white");
+INSERT INTO inventory VALUES(12, "tank_top", 12, 8.50, "white");
+INSERT INTO inventory VALUES(13, "socks", 20, 8, "black");
+INSERT INTO inventory VALUES(14, "skirt", 8, 15, "purple");
+INSERT INTO inventory VALUES(15, "crop_top", 6, 9.50, "white");
+
+- Display inventory database
+SELECT * FROM inventory;
+
+- Display database ordered by price
+SELECT * FROM inventory ORDER BY price;
+
+- What is the quantity of items grouped by color?
+SELECT color, SUM(quantity) FROM inventory GROUP BY color;
+
+- What is the dress inventory?
+SELECT * FROM inventory WHERE name= "dress";

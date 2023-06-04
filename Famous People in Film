@@ -1,0 +1,60 @@
+CREATE TABLE famous_people ( id INTEGER PRIMARY KEY, name TEXT, film TEXT, year INTEGER, character_name TEXT);
+
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(1,"Pedro_Pascal","The_Last_of_Us",2023,"Joel");
+INSERT INTO famous_people(id, name, film, year, character_name) 
+    VALUES(2,"Rachel_Weisz", "Constantine",2005,"Angela");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(3,"Anna_Kendrick","Pitch_Perfect",2012,"Becca");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(4,"Paul_Rudd", "Ant_Man",2015, "Scott");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES (5,"Daniel_Radcliffe","What_If",2013,"Wallace");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(6,"Emma_Stone","Easy_A",2010,"Olive");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(7,"Mathew_Gray_Gubler","Dollface",2022,"Wes");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(8,"Mindy_Kaling", "Late_Night",2019,"Molly");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(9,"Toni_Colette","Unbelievable",2019,"Grace");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(10,"Merritt_Wever","Roar",2022,"Elisa");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(11,"Tom_Hanks","Big",1988,"Josh");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(12,"Keanu_Reeves","Speed",1994,"Jack");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(13,"Sandra_Bullock","Bird_Box",2018,"Malorie");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(14,"Winona_Ryder","Stranger_Things", 2016,"Joyce");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(15,"Robert_Downey_Jr","Zodiac",2007,"Paul");
+    
+    
+CREATE TABLE roles (id INTEGER PRIMARY KEY,genre TEXT,film_length_mins INTEGER, seasons INTEGER);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(1,"horror",50,1);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(2,"horror",121,0);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(3,"comedy",112,0);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(4,"action",117,0);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(5,"romcom",98,0);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(6,"comedy",92,0);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(7,"romcom",30,2);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(8,"comedy",102,0);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(9,"mystery",45,1);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(10,"drama",30,1);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(11,"comedy",104,0);
+SELECT name FROM famous_people
+JOIN roles
+ON famous_people.id=roles.id;

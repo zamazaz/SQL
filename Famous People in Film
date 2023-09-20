@@ -55,6 +55,26 @@ INSERT INTO roles (id,genre,film_length_mins,seasons)
     VALUES(10,"drama",30,1);
 INSERT INTO roles (id,genre,film_length_mins,seasons)
     VALUES(11,"comedy",104,0);
-SELECT name FROM famous_people
-JOIN roles
-ON famous_people.id=roles.id;
+
+CREATE TABLE actor_pairs (id INTEGER PRIMARY KEY, pair1_id INTEGER, pair2_id INTEGER);
+INSERT INTO actor_pairs(pair1_id, pair2_id) 
+    VALUES(4,15);
+INSERT INTO actor_pairs(pair1_id, pair2_id)
+    VALUES(9,10);
+INSERT INTO actor_pairs(pair1_id, pair2_id)
+    VALUES(12,13);
+
+SELECT * 
+FROM roles 
+WHERE genre ="horror" or genre= "comedy";
+
+SELECT *
+FROM famous_people 
+WHERE year >2010 AND year <1990;
+
+SELECT a.name, b.name 
+FROM actor_pairs
+JOIN famous_people a
+ON actor_pairs.pair1_id=a.id
+JOIN famous_people b
+ON actor_pairs.pair2_id=b.id;

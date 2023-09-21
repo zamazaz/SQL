@@ -30,6 +30,10 @@ INSERT INTO famous_people (id, name, film, year, character_name)
     VALUES(14,"Winona_Ryder","Stranger_Things", 2016,"Joyce");
 INSERT INTO famous_people (id, name, film, year, character_name) 
     VALUES(15,"Robert_Downey_Jr","Zodiac",2007,"Paul");
+INSERT INTO famous_people (id, name, film, year, character_name) 
+    VALUES(16, "Meg_Ryan", "You've_Got_Mail", 1998, "Kathleen");
+INSERT INTO famous_people (id, name, film, year, character_name)
+    VALUES(17, "Emma_Watson","The_Perks_of_Being_a_Wallflower", 2012, "Sam");
     
     
 CREATE TABLE roles (id INTEGER PRIMARY KEY,genre TEXT,film_length_mins INTEGER, seasons INTEGER);
@@ -55,6 +59,19 @@ INSERT INTO roles (id,genre,film_length_mins,seasons)
     VALUES(10,"drama",30,1);
 INSERT INTO roles (id,genre,film_length_mins,seasons)
     VALUES(11,"comedy",104,0);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(12,"action",116,0);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(13,"horror",124,0);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(14,"horror",60,4);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(15,"mystery",157,0);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(16, "romcom",119,0);
+INSERT INTO roles (id,genre,film_length_mins,seasons)
+    VALUES(17, "drama", 103, 0);
+
 
 CREATE TABLE actor_pairs (id INTEGER PRIMARY KEY, pair1_id INTEGER, pair2_id INTEGER);
 INSERT INTO actor_pairs(pair1_id, pair2_id) 
@@ -63,10 +80,14 @@ INSERT INTO actor_pairs(pair1_id, pair2_id)
     VALUES(9,10);
 INSERT INTO actor_pairs(pair1_id, pair2_id)
     VALUES(12,13);
+INSERT INTO actor_pairs(pair1_id, pair2_id)
+    VALUES(11,16);
+INSERT INTO actor_pairs(pair1_id, pair2_id)
+    VALUES(5,17);
 
 SELECT * 
 FROM roles 
-WHERE genre ="horror" or genre= "comedy";
+WHERE genre IN ("horror","comedy","drama");
 
 SELECT *
 FROM famous_people 
@@ -78,3 +99,9 @@ JOIN famous_people a
 ON actor_pairs.pair1_id=a.id
 JOIN famous_people b
 ON actor_pairs.pair2_id=b.id;
+
+SELECT name, film, genre
+FROM famous_people
+JOIN roles
+ON famous_people.id=roles.id
+WHERE genre IN ('horror', 'mystery', 'comedy');

@@ -16,13 +16,20 @@ INSERT INTO inventory VALUES(14, "skirt", 8, 15, "purple");
 INSERT INTO inventory VALUES(15, "crop_top", 6, 9.50, "white");
 
 - Display inventory database
-SELECT * FROM inventory;
+SELECT * 
+FROM inventory;
 
 - Display database ordered by price
-SELECT * FROM inventory ORDER BY price;
+SELECT * 
+FROM inventory 
+ORDER BY price;
 
 - What is the quantity of items grouped by color?
-SELECT color, SUM(quantity) FROM inventory GROUP BY color;
+SELECT color, SUM(quantity) 
+FROM inventory 
+GROUP BY color;
 
 - What is the dress inventory?
-SELECT * FROM inventory WHERE name= "dress";
+SELECT * 
+FROM inventory 
+WHERE name= "dress";
